@@ -1,8 +1,14 @@
 #coding: utf8
 
-import openpyxl
-import sys
+from openpyxl import Workbook
+from openpyxl.compat import range
+from openpyxl.compat import range
 
-a = 2
-b = 3
-print(a+b)
+def writetoxlsx(filenamexlsx1, buffer):
+#    filenamexlsx = filenamexlsx1+'.xlsx'
+    filenamexlsx = "gomoraz" + '.xlsx'
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Бланк зарплаты"
+    ws['F5'] = "Рустемович"
+    wb.save(filename = filenamexlsx)
