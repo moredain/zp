@@ -1,6 +1,8 @@
 #coding: utf8
 import sys
+
 from datetime import datetime
+import excel
 
 from PyQt5.QtCore import pyqtSlot, QDateTime
 from PyQt5.QtWidgets import QApplication, QDialog, QDateEdit,QDateTimeEdit
@@ -32,9 +34,9 @@ class MainWindow(QDialog, form_class):
       user = self.label_10.text()
       usermod = user.replace(' ','-')
       print("user =" + usermod)
-      filename =datetime.strftime(now,'%y-%m-%d') +"_"+usermod + ".txt"
-      datetoday = datetime.strftime(now, '%y-%m-%d')
-      print( "filename =" + filename )
+      filenamenow =datetime.strftime(now,'%Y-%m-%d') +"_"+usermod + ".txt"
+      datetoday = datetime.strftime(now, '%Y-%m-%d')
+      print( "filename =" + filenamenow )
 #-----------------------------------------------------#
 #   Определение отдела
       tootdel = self.label_14.text()
@@ -188,37 +190,65 @@ class MainWindow(QDialog, form_class):
               + dopoln23(x1tofileequal) + right
       table12width = len(row21)
       table121border = "=" * table12width
-      table122border = "-"+ dopoln21(probel)+'-' * table12width
-
+      table122border = "-"+ probel*(listwidth21max + 6) +"-"*(table12width-len("-"+ probel*(listwidth21max + 6)))
+      print(table121border)
+      print(row21)
+      print(table122border)
       row22 = left + dopoln21(overworktofile) + between + dopoln22(x15tofile) \
               + between + dopoln23(x15tofileequal) + right
+      print(row22)
+      print(table122border)
       row23 = left + dopoln21(probel) + between + dopoln22(x2tofile) + between \
               + dopoln23(x2tofileequal) + right
+      print(row23)
+      print(table121border)
+      print(table121border)
       row24 = left + dopoln21(dutytofile) + between + dopoln22(fulldutytofile) \
               + between + dopoln23(fulldutytofileequal) + right
+      print(row24)
+      print(table122border)
       row25 = left + dopoln21(probel) + between + dopoln22(remaindertofile) \
               + between + dopoln23(remaindertofileequal) + right
+      print(row25)
+      print(table121border)
+      print(table121border)
       row26 = left + dopoln21(probel) + between + dopoln22(subwaytofile) \
               + between + dopoln23(subwaytofileequal) + right
+      print(row26)
+      print(table122border)
       row27 = left + dopoln21(traveltofile) + between + dopoln22(bustofile) \
               + between + dopoln23(bustofileequal) + right
+      print(row27)
+      print(table122border)
       row28 = left + dopoln21(probel) + between + dopoln22(cartofile) + between \
               + dopoln23(cartofileequal) + right
+      print(row28)
+      print(table121border)
+      print(table121border)
       row29 = left + dopoln21(repairstofile) + between + dopoln22(probel) + between \
               + dopoln23(repairstofileeequal) + right
+      print(row29)
+      print(table121border)
+      print(table121border)
       row210 = left + dopoln21(dayofftofile) + between + dopoln22(probel) + between \
                + dopoln23(dayofftofileequal) + right
+      print(row210)
+      print(table121border)
       mytext =[table112border, row12,table112border,row14,table112border,row16,table112border,
-               row18,table112border,probel,probel]
+               row18,table112border,probel,probel,table121border,row21,table122border,row22,
+               table122border,row23,table121border,table121border,row24,table122border,row25,
+               table121border,table121border,row26,table122border,row27,table122border,row28,
+               table121border,table121border,row29,table121border,table121border,row210,
+               table121border]
 
-      def writetofile(mytext1):
-          workwithfile = open("text.txt","w")
-          i =0
-          for pishem in mytext1:
-              workwithfile.write(mytext1[i] +'\n')
-              i = i + 1
-          workwithfile.close()
-      writetofile(mytext)
+#      def writetofile(mytext1,filename1):
+#          workwithfile = open(filename1,"w")
+#          i =0
+#          for pishem in mytext1:
+#              workwithfile.write(mytext1[i] +'\r\n')
+#              i = i + 1
+#          workwithfile.close()
+#      writetofile(mytext,filenamenow)
 
 #-----------------------------------------------------#
 form = MainWindow()
