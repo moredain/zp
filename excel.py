@@ -2,27 +2,51 @@
 
 from openpyxl import Workbook
 from openpyxl.drawing.image import Image
-from openpyxl.styles import (
-    Font,
-    Fill,
-    GradientFill,
-    PatternFill,
-    Border,
-    Alignment,
-    Protection,
-    HashableObject
-    )
+from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font, colors
 
-def writetoxlsx(filenamexlsx1, otdtofile,fioxls,monthtoxls,
-                datetoxls):
-#    filenamexlsx = filenamexlsx1+'.xlsx'
+
+def writetoxlsx(filenamexlsx1, otdtofile,otdtofileint,fioxls,fioxlsint,monthtoxls,monthtoxlsint,
+                datetoxls,datetoxlsint,overworkxl,overworkxl1,overworkxl2,overworkxl3, dutyxl, dutyxl1,
+                dutyxl2,travelxl, travelxl1,travelxl2,travelxl3 , repairxl, ofdayxl ):
     filenamexlsx = filenamexlsx1 + '.xlsx'
-    print(filenamexlsx)
     wb = Workbook()
     ws = wb.active
 
+    font = Font(name='Calibri', size=11, bold=False, italic=False, vertAlign=None, underline='none',
+                strike=False, color='FF000000')
 
+
+    fill = PatternFill(fill_type=None, start_color='FFFFFFFF', end_color='FF000000')
+
+    border = Border(
+        left=Side(border_style=None, color='FF000000'),
+        right=Side(border_style=None, color='FF000000'),
+        top=Side(border_style=None, color='FF000000'),
+        bottom=Side(border_style=None, color='FF000000'),
+        diagonal=Side(border_style=None, color='FF000000'),
+        diagonal_direction=0,
+        outline=Side(border_style=None, color='FF000000'),
+        vertical=Side(border_style=None, color='FF000000'),
+        horizontal=Side(border_style=None, color='FF000000'))
+
+    alignment = Alignment(horizontal='general', vertical='bottom', text_rotation=0, wrap_text=False,
+                      shrink_to_fit=False, indent=0)
+
+    number_format = 'General'
+
+    protection = Protection(locked=True, hidden=False)
+
+    a1 = ws['K14']
+    d4 = ws['L16']
+    ft = Font(color=colors.RED)
+    a1.font = ft
+    d4.font = ft
+
+#    a1.font.italic = True
+
+    print("badabum")
     ws.column_dimensions["E"].width = 1.6
+    ws.column_dimensions["H"].width = 30.0
     ws.merge_cells('C7:D7')
     ws.merge_cells('C9:D9')
     ws.merge_cells('F9:H9')
@@ -46,26 +70,39 @@ def writetoxlsx(filenamexlsx1, otdtofile,fioxls,monthtoxls,
     ws.merge_cells('E23:G23')
     ws.merge_cells('E24:G24')
     ws.merge_cells('E25:G25')
-    ws.merge_cells('H16:I16')
-    ws.merge_cells('H17:I17')
-    ws.merge_cells('H18:I18')
-    ws.merge_cells('H19:I19')
-    ws.merge_cells('H20:I20')
-    ws.merge_cells('H21:I21')
-    ws.merge_cells('H22:I22')
-    ws.merge_cells('H23:I23')
-    ws.merge_cells('H24:I24')
-    ws.merge_cells('H25:I25')
+
+
+
 
     ws.title = "Бланк зарплаты"
-    ws['F5'] = "Рустем0вич"
     ws['C7'] = otdtofile
     ws['C9'] = fioxls
     ws['C11'] = monthtoxls
     ws['C13'] = datetoxls
+    ws['F7'] = otdtofileint
+    ws['F9'] = fioxlsint
+    ws['F11'] = monthtoxlsint
+    ws['F13'] = datetoxlsint
+    ws['B16'] = overworkxl
+    ws['E16'] = overworkxl1
+    ws['E17'] = overworkxl2
+    ws['E18'] = overworkxl3
+    ws['B19'] = dutyxl
+    ws['E19'] = dutyxl1
+    ws['E20'] = dutyxl2
+    ws['B21'] = travelxl
+    ws['E21'] = travelxl1
+    ws['E22'] = travelxl2
+    ws['E23'] = travelxl3
+    ws['B24'] = repairxl
+    ws['B25'] = ofdayxl
+
     header = Image('header1.png')
     ws.add_image(header, 'B1')
     ws.column_dimensions["A"].width = 1.29
     wb.save(filename = filenamexlsx)
 
-writetoxlsx("gomoraz", "Отдел", "ФИО", 'Отчетный месяц', 'Дата заполнения')
+writetoxlsx("gomoraz", "Отдел","IT", "ФИО","Шафигуллин Ильфат Ульфатович", 'Отчетный месяц', "Апрель",
+            'Дата заполнения', "Какая то дата", 'Переработки (часы)', 'х1, включая во время дежурств',
+            'х1,5','х2','Дежурства','Полные (недели)', 'Хвосты (руб)','Проезд','Метро (20р.)', 'Автобус (20р.)',
+            'Авто (км)', 'Ремонт электроники', 'Прогулы (ч.)')
