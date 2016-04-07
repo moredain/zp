@@ -42,11 +42,19 @@ def writetoxlsx(filenamexlsx1, otdtofile,otdtofileint,fioxls,fioxlsint,monthtoxl
     a1.font = ft
     d4.font = ft
 
-#    a1.font.italic = True
+    b16 = ws['B16']
+    b16border = Border( left=Side(border_style='hair', thickness ='4' ),
+                        right = Side(border_style='dotted'),
+                        bottom = Side,
+                        top =Side(border_style='mediumDashDotDot'))
+    b16.border = b16border
+#   dotted mediumDashDotDot dashed thick slantDashDot hair mediumDashDot medium dashDotDot dashDot
+#   mediumDashed double thin
 
     print("badabum")
     ws.column_dimensions["E"].width = 1.6
     ws.column_dimensions["H"].width = 30.0
+    ws.column_dimensions["F"].width = 20.0
     ws.merge_cells('C7:D7')
     ws.merge_cells('C9:D9')
     ws.merge_cells('F9:H9')
@@ -70,6 +78,7 @@ def writetoxlsx(filenamexlsx1, otdtofile,otdtofileint,fioxls,fioxlsint,monthtoxl
     ws.merge_cells('E23:G23')
     ws.merge_cells('E24:G24')
     ws.merge_cells('E25:G25')
+    ws.merge_cells('B1:I1')
 
 
 
