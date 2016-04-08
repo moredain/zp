@@ -41,14 +41,84 @@ def writetoxlsx(filenamexlsx1, otdtofile,otdtofileint,fioxls,fioxlsint,monthtoxl
     ft = Font(color=colors.RED)
     a1.font = ft
     d4.font = ft
-
+    def borderfunc(ws1,tx,rx,bx,lx ):
+        if tx == 1:
+            t = Border(top=Side(border_style='hair'))
+        else:
+            t = Border(top=Side(border_style='medium'))
+        if rx ==1:
+            r = Border(top=Side(border_style='hair'))
+        else:
+            r = Border(top=Side(border_style='medium'))
+        if bx == 1:
+            b = Border(top=Side(border_style='hair'))
+        else:
+            b = Border(top=Side(border_style='medium'))
+        if lx == 1:
+            l = Border(top=Side(border_style='hair'))
+        else:
+            l = Border(top=Side(border_style='medium'))
+        wsx =ws[ws1]
+        bordercell = [t,r,b,l]
+        for i in bordercell:
+            print(wsx.border)
+ #           wsx.border = bordercell[i]
+ #           wsx.border = bordercell[i+1]
+ #           wsx.border = bordercell[i + 2]
+ #           wsx.border = bordercell[i + 3]
+    borderfunc('D30',1,2,2,1)
     b16 = ws['B16']
-    b16border = Border( left=Side(border_style='hair', thickness ='4' ),
-                        right = Side(border_style='dotted'),
-                        bottom = Side,
-                        top =Side(border_style='mediumDashDotDot'))
+    b16border = Border(left=Side(border_style='medium'),
+                       bottom=Side(border_style='medium'),
+                       top=Side(border_style='medium'))
     b16.border = b16border
-#   dotted mediumDashDotDot dashed thick slantDashDot hair mediumDashDot medium dashDotDot dashDot
+
+    d16 = ws['D16']
+    d16border = Border(right=Side(border_style='hair'))
+    d16.border = d16border
+
+    b18 = ws['B18']
+    b18border = Border(bottom=Side(border_style='medium'))
+    b18.border = b18border
+
+    b30 = ws['B30']
+    b30border = Border( left=Side(border_style='hair'),
+                        right = Side(border_style='dotted'),
+                        bottom = Side(border_style='dashed'),
+                        top =Side(border_style='mediumDashDotDot'))
+    b30.border = b30border
+    b32 = ws['B32']
+    b32border = Border(left=Side(border_style='thick'),
+                       right=Side(border_style='slantDashDot'),
+                       bottom=Side(border_style='mediumDashDot'),
+                       top=Side(border_style='medium'))
+    b32.border = b32border
+
+    b34 = ws['B34']
+    b34border = Border(left=Side(border_style='dashDotDot'),
+                       right=Side(border_style='dashDot'),
+                       bottom=Side(border_style='mediumDashed'),
+                       top=Side(border_style='double'))
+    b34.border = b34border
+
+    b36 = ws['B36']
+    b36border = Border(left=Side(border_style='dashDotDot'),
+                       right=Side(border_style='dashDot'),
+                       bottom=Side(border_style='mediumDashed'),
+                       top=Side(border_style='double'))
+    b36.border = b36border
+
+    b38 = ws['B38']
+    b38border = Border(left=Side(border_style='dashDotDot'),
+                       right=Side(border_style='dashDot'),
+                       bottom=Side(border_style='mediumDashed'),
+                       top=Side(border_style='double'))
+    b38.border = b38border
+
+    b40 = ws['B40']
+    b40border = Border(left=Side(border_style='thin'))
+    b40.border = b40border
+    #   dotted mediumDashDotDot dashed thick slantDashDot hair mediumDashDot medium dashDotDot dashDot
 #   mediumDashed double thin
 
     print("badabum")
