@@ -41,85 +41,78 @@ def writetoxlsx(filenamexlsx1, otdtofile,otdtofileint,fioxls,fioxlsint,monthtoxl
     ft = Font(color=colors.RED)
     a1.font = ft
     d4.font = ft
+
+
     def borderfunc(ws1,tx,rx,bx,lx ):
         if tx == 1:
-            t = Border(top=Side(border_style='hair'))
+            t = Side(border_style='hair')
+        elif tx == 0:
+            t = Side(border_style=None)
         else:
-            t = Border(top=Side(border_style='medium'))
+            t = Side(border_style='medium')
         if rx ==1:
-            r = Border(top=Side(border_style='hair'))
+            r = Side(border_style='hair')
+        elif rx == 0:
+            r = Side(border_style=None)
         else:
-            r = Border(top=Side(border_style='medium'))
+            r = Side(border_style='medium')
         if bx == 1:
-            b = Border(top=Side(border_style='hair'))
+            b = Side(border_style='hair')
+        elif bx == 0:
+            b = Side(border_style=None)
         else:
-            b = Border(top=Side(border_style='medium'))
+            b = Side(border_style='medium')
         if lx == 1:
-            l = Border(top=Side(border_style='hair'))
+            l = Side(border_style='hair')
+        elif lx == 0:
+            l = Side(border_style=None)
         else:
-            l = Border(top=Side(border_style='medium'))
+            l = Side(border_style='medium')
         wsx =ws[ws1]
-        bordercell = [t,r,b,l]
-        for i in bordercell:
-            print(wsx.border)
- #           wsx.border = bordercell[i]
- #           wsx.border = bordercell[i+1]
- #           wsx.border = bordercell[i + 2]
- #           wsx.border = bordercell[i + 3]
-    borderfunc('D30',1,2,2,1)
-    b16 = ws['B16']
-    b16border = Border(left=Side(border_style='medium'),
-                       bottom=Side(border_style='medium'),
-                       top=Side(border_style='medium'))
-    b16.border = b16border
+        wsx.border = Border(top=t,right=r, bottom=b,left=l)
 
-    d16 = ws['D16']
-    d16border = Border(right=Side(border_style='hair'))
-    d16.border = d16border
 
-    b18 = ws['B18']
-    b18border = Border(bottom=Side(border_style='medium'))
-    b18.border = b18border
-
-    b30 = ws['B30']
-    b30border = Border( left=Side(border_style='hair'),
-                        right = Side(border_style='dotted'),
-                        bottom = Side(border_style='dashed'),
-                        top =Side(border_style='mediumDashDotDot'))
-    b30.border = b30border
-    b32 = ws['B32']
-    b32border = Border(left=Side(border_style='thick'),
-                       right=Side(border_style='slantDashDot'),
-                       bottom=Side(border_style='mediumDashDot'),
-                       top=Side(border_style='medium'))
-    b32.border = b32border
-
-    b34 = ws['B34']
-    b34border = Border(left=Side(border_style='dashDotDot'),
-                       right=Side(border_style='dashDot'),
-                       bottom=Side(border_style='mediumDashed'),
-                       top=Side(border_style='double'))
-    b34.border = b34border
-
-    b36 = ws['B36']
-    b36border = Border(left=Side(border_style='dashDotDot'),
-                       right=Side(border_style='dashDot'),
-                       bottom=Side(border_style='mediumDashed'),
-                       top=Side(border_style='double'))
-    b36.border = b36border
-
-    b38 = ws['B38']
-    b38border = Border(left=Side(border_style='dashDotDot'),
-                       right=Side(border_style='dashDot'),
-                       bottom=Side(border_style='mediumDashed'),
-                       top=Side(border_style='double'))
-    b38.border = b38border
-
-    b40 = ws['B40']
-    b40border = Border(left=Side(border_style='thin'))
-    b40.border = b40border
-    #   dotted mediumDashDotDot dashed thick slantDashDot hair mediumDashDot medium dashDotDot dashDot
-#   mediumDashed double thin
+    borderfunc('B16', 2, 1, 2, 2)
+    borderfunc('B18', 2, 2, 2, 2)
+    borderfunc('D16', 2, 1, 2, 2)
+    borderfunc('E16', 2, 1, 1, 1)
+    borderfunc('E17', 1, 1, 1, 1)
+    borderfunc('E18', 1, 1, 2, 1)
+    borderfunc('G16', 1, 1, 1, 1)
+    borderfunc('G17', 1, 1, 1, 1)
+    borderfunc('G18', 1, 1, 1, 1)
+    borderfunc('B19', 2, 1, 2, 2)
+    borderfunc('B21', 2, 1, 2, 2)
+    borderfunc('B24', 2, 1, 2, 2)
+    borderfunc('B25', 2, 1, 2, 2)
+    borderfunc('D19', 2, 1, 2, 2)
+    borderfunc('D21', 2, 1, 2, 2)
+    borderfunc('D24', 2, 1, 2, 2)
+    borderfunc('D25', 2, 1, 2, 2)
+    borderfunc('E19', 2, 1, 1, 1)
+    borderfunc('E20', 1, 1, 2, 1)
+    borderfunc('E21', 2, 1, 1, 1)
+    borderfunc('E22', 1, 1, 1, 1)
+    borderfunc('E23', 1, 1, 2, 1)
+    borderfunc('E24', 2, 1, 2, 1)
+    borderfunc('E25', 2, 1, 2, 1)
+    borderfunc('G19', 1, 1, 1, 1)
+    borderfunc('G20', 1, 1, 1, 1)
+    borderfunc('G21', 1, 1, 1, 1)
+    borderfunc('G22', 1, 1, 1, 1)
+    borderfunc('G23', 1, 1, 1, 1)
+    borderfunc('G24', 1, 1, 1, 1)
+    borderfunc('G25', 1, 1, 1, 1)
+    borderfunc('H16', 2, 2, 1, 1)
+    borderfunc('H17', 1, 2, 1, 1)
+    borderfunc('H18', 1, 2, 1, 1)
+    borderfunc('H19', 2, 2, 1, 1)
+    borderfunc('H20', 1, 2, 2, 1)
+    borderfunc('H21', 2, 2, 1, 1)
+    borderfunc('H22', 1, 2, 1, 1)
+    borderfunc('H23', 1, 2, 2, 1)
+    borderfunc('H24', 2, 2, 2, 1)
+    borderfunc('H25', 2, 2, 2, 1)
 
     print("badabum")
     ws.column_dimensions["E"].width = 1.6
@@ -148,10 +141,11 @@ def writetoxlsx(filenamexlsx1, otdtofile,otdtofileint,fioxls,fioxlsint,monthtoxl
     ws.merge_cells('E23:G23')
     ws.merge_cells('E24:G24')
     ws.merge_cells('E25:G25')
-    ws.merge_cells('B1:I1')
-
-
-
+    ws.merge_cells('B1:K1')
+    ws.merge_cells('B2:K2')
+    ws.merge_cells('B3:K3')
+    ws.merge_cells('B4:K4')
+    ws.merge_cells('B5:K5')
 
     ws.title = "Бланк зарплаты"
     ws['C7'] = otdtofile
@@ -176,9 +170,15 @@ def writetoxlsx(filenamexlsx1, otdtofile,otdtofileint,fioxls,fioxlsint,monthtoxl
     ws['B24'] = repairxl
     ws['B25'] = ofdayxl
 
+    ws.column_dimensions.group('L', 'M', hidden=True)
+
     header = Image('header1.png')
     ws.add_image(header, 'B1')
+#    pr = Protection(locked=True, hidden=False)
+    b1 = ws['B1']
+#    b1.protection = pr
     ws.column_dimensions["A"].width = 1.29
+    ws.column_dimensions["H"].width = 10.0
     wb.save(filename = filenamexlsx)
 
 writetoxlsx("gomoraz", "Отдел","IT", "ФИО","Шафигуллин Ильфат Ульфатович", 'Отчетный месяц', "Апрель",
