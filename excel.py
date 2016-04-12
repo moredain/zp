@@ -114,6 +114,22 @@ def writetoxlsx(filenamexlsx1, otdtofile,otdtofileint,fioxls,fioxlsint,monthtoxl
     borderfunc('H24', 2, 2, 2, 1)
     borderfunc('H25', 2, 2, 2, 1)
 
+    k20 = ws['K20']
+    k20b =Border(
+        left=Side(border_style='medium', color='FFFFFF'),
+        right=Side(border_style='medium', color='FFFFFF'),
+        top=Side(border_style='medium', color='FFFFFF'),
+        bottom=Side(border_style='medium', color='FFFFFF'),
+        diagonal=Side(border_style=None, color='FF000000'),
+        diagonal_direction=0,
+        outline=Side(border_style=None, color='FF000000'),
+        vertical=Side(border_style=None, color='FF000000'),
+        horizontal=Side(border_style=None, color='FF000000'))
+    k20.border=k20b
+
+#'dashDot', 'thick', 'mediumDashDotDot', 'dashDotDot', 'thin', 'double', 'hair',
+    # 'mediumDashDot', 'slantDashDot', 'dashed', 'dotted', 'medium', 'mediumDashed'}
+
     print("badabum")
     ws.column_dimensions["E"].width = 1.6
     ws.column_dimensions["H"].width = 30.0
