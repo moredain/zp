@@ -12,6 +12,43 @@ def writetoxlsx(filetosave,otdel, fio,month,date,x1,x15,x2,duty1,duty2,repair,da
     wb = load_workbook("temp/template.xlsx")
     ws = wb.active
 
+    def translit(fio):
+
+        FIO2fio = fio.lower()
+        f =FIO2fio.split(' ')
+        fam = f[0]
+        name = f[1]
+        fname = f[2]
+        famlist = list(fam)
+        namelist = list(name)
+        fnamelist = list(fname)
+
+        print(famlist)
+
+        def dictfunc(somelist):
+            dict = {'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh', 'з': 'z', 'и': 'i', 'й': 'j',
+                    'к': 'k','л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u',
+                    'ф': 'f','х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh', 'щ': 'shh', 'ы': 'y', 'ь': "'",'ъ':'#',
+                    'э': 'je','ю': 'ju','я': 'ja'}
+            i = 0
+            print(dict['щ'])
+            trs = 1
+            for kkk in somelist:
+                trs =(dict[kkk])
+                i = i+1
+
+            return trs
+
+        trsfam = dictfunc(famlist)
+        trsname = dictfunc(namelist)
+        trsfname = dictfunc(fnamelist)
+        print(trsfam)
+        print(trsname)
+        print(trsfname)
+        return print(1)
+
+    translit(fio)
+
     ws.title = "Бланк зарплаты"
     ws['D6'] = otdel
     ws['D8'] = fio
