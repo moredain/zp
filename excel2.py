@@ -1,8 +1,7 @@
 #coding: utf8
 
-from openpyxl import Workbook
-from openpyxl.styles import Font, colors
 from openpyxl import load_workbook
+from openpyxl.drawing.image import Image
 
 
 def writetoxlsx(filetosave,otdel, fio,month,date,x1,x15,x2,duty1,duty2,repair,dayoff,metro,bus,car):
@@ -23,20 +22,15 @@ def writetoxlsx(filetosave,otdel, fio,month,date,x1,x15,x2,duty1,duty2,repair,da
         namelist = list(name)
         fnamelist = list(fname)
 
-        print(famlist)
-
         def dictfunc(somelist):
             dict = {'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ж': 'zh', 'з': 'z', 'и': 'i', 'й': 'j',
                     'к': 'k','л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u',
                     'ф': 'f','х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh', 'щ': 'shh', 'ы': 'y', 'ь': "'",'ъ':'#',
                     'э': 'je','ю': 'ju','я': 'ja'}
-            i = 0
-            print(dict['щ'])
-            trs = 1
+            trs = []
             for kkk in somelist:
-                trs =(dict[kkk])
-                i = i+1
 
+                trs.append(dict[kkk])
             return trs
 
         trsfam = dictfunc(famlist)
@@ -65,6 +59,8 @@ def writetoxlsx(filetosave,otdel, fio,month,date,x1,x15,x2,duty1,duty2,repair,da
     ws['G21'] = metro
     ws['G22'] = bus
     ws['G23'] = car
+    img = Image('temp/logo.png')
+    ws.add_image(img, 'C1')
 
     wb.save(filename = filenamexlsx)
 
