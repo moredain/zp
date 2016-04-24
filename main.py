@@ -2,7 +2,7 @@
 import sys
 
 from datetime import datetime
-import excel
+import excel2
 
 from PyQt5.QtCore import pyqtSlot, QDateTime
 from PyQt5.QtWidgets import QApplication, QDialog, QDateEdit,QDateTimeEdit
