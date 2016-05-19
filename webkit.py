@@ -12,7 +12,7 @@ app1 = QApplication(sys.argv)
 
 web = QWebView()
 
-style_url1 = 'file:///home/umbrella/PycharmProjects/zp/bootstrap_mod/example/bootstrap.min.css'
+style_url1 = 'file:///home/umbrella/PycharmProjects/zp/bootstrap_mod/example/bootstrap.css'
 web.settings().setUserStyleSheetUrl(QUrl(style_url1))
 style_url2 = 'file:///home/umbrella/PycharmProjects/zp/bootstrap_mod/example/application.css'
 web.settings().setUserStyleSheetUrl(QUrl(style_url2))
