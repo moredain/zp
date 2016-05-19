@@ -311,7 +311,7 @@
        </size>
       </property>
       <property name="text">
-       <string>Автобус (20р.)</string>
+       <string>Автобус (25р.)</string>
       </property>
      </widget>
     </item>
@@ -420,7 +420,7 @@
        </size>
       </property>
       <property name="text">
-       <string>Метро (20р.)</string>
+       <string>Метро (25р.)</string>
       </property>
      </widget>
     </item>

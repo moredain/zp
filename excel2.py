@@ -59,7 +59,7 @@ def writetoxlsx(filetosave,otdel, fio,month,date,x1,x15,x2,duty1,duty2,repair,da
     ws['G21'] = metro
     ws['G22'] = bus
     ws['G23'] = car
-    img = Image('temp/logo.png')
+    img = Image('header1.png')
     ws.add_image(img, 'C1')
 
     wb.save(filename = filenamexlsx)
