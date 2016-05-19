@@ -10,20 +10,24 @@ from PyQt5.QtWebKitWidgets import QWebPage, QWebView
 app1 = QApplication(sys.argv)
 
 web = QWebView()
-web.load(QUrl("yandex.ru"))
+
+#local_url = QUrl.fromLocalFile('bootstrap_mod/example.html')
+web.load(QUrl('file:///home/umbrella/PycharmProjects/zp/bootstrap_mod/example.html'))
+web.setStyleSheet("qrc:/bootstrap_mod/example/bootstrap.min.css")
+#view.settings().setUserStyleSheetUrl(QUrl.fromLocalFile("style.css"))
 # web.show() можно показать страницу
 printer = QPrinter()
 printer.setPageSize(QPrinter.A4)
 printer.setOutputFormat(QPrinter.PdfFormat)
 printer.setOutputFileName("file.pdf")
 
+web.print(printer)
+print('pdf generated')
+QApplication.exit()
 def convertIt():
-        web.print_(printer)
-        print
-        "Pdf generated"
+        web.print(printer)
+        print("Pdf generated")
         QApplication.exit()
 
-convertIt()
-#QObject.connect(web, SIGNAL("loadFinished(bool)"), convertIt)
-#QObject.connect(web, SIGNAL("loadFinished(bool)"), convertIt)
+web.loadFinished.connect(convertIt)
 sys.exit(app1.exec_())
