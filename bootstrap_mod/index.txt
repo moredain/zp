@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<html>
+ <head>
+  <title>Зарплата</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="jopabootstrap.css">
+ </head>
+ <body>
+<div class="container">
+
+
+<table id="table1">
+
+
+     <tr >
+         <td id="meshok1"></td>
+      <td id='meshok2'><img src="./meshok2.png" alt="альтернативный текст"> </td>
+         <td id="meshok3"> <h2>Бланк учета зарплаты</h2> </td>
+
+   </tr>
+    </table>
+<br><br><br>
+
+<table class="table2"  >
+
+    <tr class="tablebody1" >
+      <td class="col21"></td>
+      <td class="col22" >Отдел</td>
+       <td class="col23"> </td>
+
+   </tr>
+    <tr class="emptyrow">
+      <td colspan='3' > </td>
+   </tr>
+    <tr class="tablebody1">
+    <td class="col21"> </td>
+      <td class="col22">ФИО</td>
+       <td class="col23"></td>
+
+   </tr>
+    <tr class="emptyrow">
+      <td colspan='3' ></td>
+   </tr>
+    <tr class="tablebody1">
+      <td class="col21"</td>
+      <td class="col22">Отчетный месяц</td>
+       <td class="col23" > </td>
+
+   </tr>
+    <tr class="emptyrow">
+      <td colspan='3' ></td>
+   </tr>
+    <tr class="tablebody1">
+      <td class="col21"></td>
+      <td class="col22">Дата заполнения</td>
+       <td class="col23" > </td>
+
+   </tr>
+
+    </table>
+
+<br><br>
+
+<table id='table3' border="0">
+     <tr>
+      <td class="col31 myborder31" rowspan="3">Переработки(ч)</td>
+       <td class="col32 myborder32"> х1, включая во время дежурств</td>
+        <td class="col33 myborder32"> </td>
+   </tr>
+
+    <tr >
+    <td class="col32 myborder32" > х1,5</td>
+        <td class="col33 myborder32" > </td>
+   </tr>
+    <tr >
+     <td class="col32 myborder32 myborderbottom" > х2</td>
+        <td class="col33 myborder32 myborderbottom" > </td>
+   </tr>
+
+       <tr  >
+      <td class="col31 myborder31" rowspan="2" >Дежурства</td>
+       <td class="col32 myborder32" > Полные недели (шт)</td>
+        <td class="col33 myborder32" > </td>
+   </tr>
+
+    <tr >
+    <td class="col32 myborder32"> Хвосты (руб.)</td>
+        <td class="col33 myborder32"> </td>
+   </tr>
+
+       <tr class='myborderbottomtop' >
+      <td class="col31 myborder31"  >Ремонт электроники</td>
+       <td class="col32 myborder32 " >  </td>
+        <td class="col33 myborder32"> </td>
+   </tr>
+
+    <tr class='myborderbottomtop' >
+      <td class="col31 myborder31 ">Прогулы (ч)</td>
+       <td class="col32 myborder32 " > </td>
+        <td class="col33 myborder32"> </td>
+   </tr>
+
+
+
+     <tr >
+      <td class="col31 myborder31" rowspan="3">Проезд</td>
+       <td class="col32 myborder32 "> Метро (25 руб.)</td>
+        <td class="col33 myborder32" > </td>
+   </tr>
+
+    <tr >
+    <td class="col32 myborder32"> Автобус (25 руб.)</td>
+        <td class="col33 myborder32" > </td>
+   </tr>
+    <tr >
+     <td class="col32 myborder32" > Авто (км.)</td>
+        <td class="col33 myborder32 " ></td>
+   </tr>
+
+
+    <tr class="emptyrow">
+      <td colspan='3' >&nbsp; </td>
+   </tr>
+    <tr class="emptyrow">
+      <td colspan='3' >&nbsp; </td>
+   </tr>
+
+      <tr >
+      <td class="col31 myborder31" rowspan="3">Комментарий</td>
+       <td  class=" comment myborder32" colspan="2" > </td>
+
+   </tr>
+
+    <tr  >
+    <td class="comment myborder32" colspan="2" > </td>
+
+   </tr>
+
+    <tr >
+    <td class="comment myborder32" colspan="2" > </td>
+
+   </tr>
+
+
+
+</table>
+
+
+</div>
+ </body>
+</html>
