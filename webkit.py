@@ -1,6 +1,6 @@
 import sys
 
-from PyQt5.QtCore import QUrl
+from PyQt5.QtCore import QUrl,QFileInfo
 
 from PyQt5.QtWidgets import QApplication
 
@@ -24,8 +24,12 @@ web = QWebView()
 #    """
 #view.setHtml(html, baseUrl)
 
+#html1 = QUrl.fromLocalFile(":/bootstrap_mod/index.html")
+link =QUrl.fromLocalFile(QFileInfo("bootstrap_mod/index.html").absoluteFilePath())
+print(type(QFileInfo("bootstrap_mod/index.html")))
+print(link)
 
-web.load(QUrl ("file:///"+"bootstrap_mod/index.html"))
+web.load(QUrl(link))
 
 
 printer = QPrinter()
