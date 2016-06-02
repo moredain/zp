@@ -18,6 +18,8 @@ link =QUrl.fromLocalFile(QFileInfo("bootstrap_mod/index.html").absoluteFilePath(
 web.load(QUrl(link))
 
 
+
+
 printer = QPrinter()
 printer.setPageSize(QPrinter.A4)
 printer.setOutputFormat(QPrinter.PdfFormat)
