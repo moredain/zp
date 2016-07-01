@@ -8,30 +8,31 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtPrintSupport import QPrinter
 from PyQt5.QtWebKitWidgets import QWebView
 
-app1 = QApplication(sys.argv)
+def PdfConverter(username):
+        htmllink = "bootstrap_mod/"+username+".html"
+        app1 = QApplication(sys.argv)
 
-web = QWebView()
-
-
-link =QUrl.fromLocalFile(QFileInfo("bootstrap_mod/index.html").absoluteFilePath())
-
-web.load(QUrl(link))
+        web = QWebView()
 
 
+        link =QUrl.fromLocalFile(QFileInfo(htmllink).absoluteFilePath())
 
+        web.load(QUrl(link))
 
-printer = QPrinter()
-printer.setPageSize(QPrinter.A4)
-printer.setOutputFormat(QPrinter.PdfFormat)
-printer.setOutputFileName("file.pdf")
+        printer = QPrinter()
+        printer.setPageSize(QPrinter.A4)
+        printer.setOutputFormat(QPrinter.PdfFormat)
+        Pdf_Generated_Name=username+".pdf"
+        printer.setOutputFileName(Pdf_Generated_Name)
 
-web.print(printer)
-print('pdf generated')
-QApplication.exit()
-def convertIt():
         web.print(printer)
-        print("Pdf generated")
         QApplication.exit()
+        def convertIt():
+                web.print(printer)
+                print("Pdf generated")
+                QApplication.exit()
 
-web.loadFinished.connect(convertIt)
-sys.exit(app1.exec_())
+        web.loadFinished.connect(convertIt)
+        sys.exit(app1.exec_())
+
+PdfConverter("gopnik")

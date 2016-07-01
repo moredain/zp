@@ -3,7 +3,6 @@
 from openpyxl import load_workbook
 from openpyxl.drawing.image import Image
 
-
 def writetoxlsx(filetosave,otdel, fio,month,date,x1,x15,x2,duty1,duty2,repair,dayoff,metro,bus,car):
 
     filenamexlsx ='temp/usertemp/'+filetosave + '.xlsx'
