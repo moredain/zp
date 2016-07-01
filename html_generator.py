@@ -16,7 +16,7 @@ def todohtml(shtatx, username):
         print("Error. String of replace don't found")
     else:
         mylistlen = len(shtatx)
-        print(shtatx)
+
         spli = temphtmlstr.split("###")
         i = 0
 
@@ -26,14 +26,12 @@ def todohtml(shtatx, username):
 
         s=""
         fullhtml =s.join(spli)
-        htmlname = "bootstrap_mod/"+username+".html"
+        htmlname = "bootstrap_mod/usertemp/"+username+".html"
         fullhtml_file_write = open(htmlname, "w")
         fullhtml_file_write.write(fullhtml)
+        print("HTML generated")
         fullhtml_file_write.close()
-
-
-
-    return  "HTML generated"
+        return 0
 
 shtat = ['hren1','hren2','hren3','hren4','hren5','hren6','hren7','hren8','hren9','hren10','hren11','hren12','hren13',
          'hren14','hren15','hren16','hren17',]
